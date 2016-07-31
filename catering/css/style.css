@@ -1,0 +1,266 @@
+/*   
+Theme Name: Restik
+Theme URI: домашняя-страница-темы
+Description: краткое-описание-темы
+Author: Lazy
+Author URI: ваш-URI
+Template: restoran
+Version: номер-версии--необязательное-поле
+.
+Развёрнутое описание темы/Лицензия-если-нужно.
+.
+*/
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+html {height: 100%;}
+body {
+	height: 100%;
+	font: 14px/24px Arial, Tahoma, sans-serif;
+	background-color: #f2f2f2;
+}
+ol, ul {list-style: none;}
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a, a:hover {text-decoration: none;}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+@font-face {
+    font-family: 'Dynalight';
+    src: url('../fonts/Dynalight.otf');
+}
+
+@font-face {
+    font-family: 'NexaLight';
+    src: url('../fonts/NexaLight.eot');
+    src: url('../fonts/NexaLight.eot') format('embedded-opentype'),
+         url('../fonts/NexaLight.woff2') format('woff2'),
+         url('../fonts/NexaLight.woff') format('woff'),
+         url('../fonts/NexaLight.ttf') format('truetype'),
+         url('../fonts/NexaLight.svg#NexaLight') format('svg');
+}
+
+.clearfix:after {clear: both;}
+
+.left {float: left;}
+.right {float: right;}
+
+.text-right {
+	text-align: right;
+}
+.container {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+
+#header {
+	background: #000;
+}
+.logo {margin-top: 10px;}
+.logo a {
+	display: inline-block;
+	font: 50px 'Dynalight',sans-serif;
+	color: #fff;
+}
+.logo a span {color: #c52e02;}
+.nav li {
+	display: inline-block;
+	font: 14px/17px Arial, sans-serif;
+	color: #fff;
+}
+.nav {margin: 30px 0 25px 0;}
+.nav li + li {
+	margin-left: 40px;
+}
+.nav li a {
+	font: 14px/16px Arial, sans-serif;
+	color: #fff;
+}
+.nav li a:hover {
+	color: #c52e02;
+}
+#bg-top {
+	background: url(../img/bg-top.png) repeat-x ;
+	height: 560px;
+	width: 100%;
+}
+.h-title {
+	padding-top: 20px;
+	font: 60px 'Dynalight',sans-serif;
+	text-align: center;
+}
+.h-title span{color: #fff;}
+
+/*Slider*/
+.wrapper {
+	height: 490px;
+	margin: 20px auto 0;
+	position: relative;
+	width: 100%;
+}
+
+.slider {
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+	border: 10px solid #fff;
+	box-shadow: 0 0 4px rgba(0,0,0,.3);
+}
+
+.slides {
+	height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+	-webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.slide1 { background-image: url(../img/slide1.png); }
+.slide2 { background-image: url(../img/slide2.png); }
+.slide3 { background-image: url(../img/slide3.png); }
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3 {
+	opacity: 1;
+	z-index: 1;
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.wrapper .controls {
+	bottom: 3%;
+	left: 50%;
+	margin-left: -50px;
+	position: absolute;
+	z-index: 66;
+}
+
+.wrapper label {
+	background: #ddd;
+	cursor: pointer;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin: 0 5px;
+	position: relative;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transition: background ease-in-out .5s;
+	-moz-transition: background ease-in-out .5s;
+	-o-transition: background ease-in-out .5s;
+	transition: background ease-in-out .5s;
+}
+
+.wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3) {
+	background: #d13802;
+}
+
+.wrapper label:after {
+	border: 4px solid #fff;
+	content: " ";
+	display: block;
+	height: 20px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 20px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+.box-wrapper {
+	margin-top: 15px;
+}
+.box {
+	display: inline-block;
+	overflow: hidden;
+	margin-right: 10px;
+	height: 165px;
+	width: 32.3%;
+	border: 10px solid #fff;
+	box-shadow: 0 0 4px rgba(0,0,0,.3);
+}
+.box img {width: 100%;}
+
+.box:last-child {margin-right: 0;}
+
+.descr-wrapper {padding: 30px 0 50px 0;font: 13px/30px Arial, sans-serif;color: #7f7f7f;}
+.services {display: inline-block;width: 30%; }
+.descr h3 {font: 24px/30px Arial, sans-serif; color: #404040;margin-bottom: 10px;}
+.services li:before {
+	color: #d53a03;
+	content: '●';
+	padding-right: 10px;
+}
+.services .btn a{background: linear-gradient(to top, #c52f02, #f2652a);}
+.services .btn a:hover{background: linear-gradient(to top, #f2652a, #c52f02);}
+.descr .btn {padding-top: 25px;}
+.descr .btn a {
+	padding: 14px 22px;
+	color: #fff;
+}
+.about {display: inline-block;width: 68%;}
+.about a {text-decoration: underline;color: #7f7f7f}
+.about .green {color: #769e02;}
+.about .green a {color: #769e02;text-decoration: underline;}
+.about .btn a{background: linear-gradient(to top, #779f02, #b1cf03);text-decoration: none;}
+.about .btn a:hover{background: linear-gradient(to top,  #b1cf03, #779f02);text-decoration: none;}
+
+#footer {
+	text-align: center;
+	height: 100px;
+	padding: 25px 0;
+	background: #000;
+	color: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#footer span {color: #c52e02}

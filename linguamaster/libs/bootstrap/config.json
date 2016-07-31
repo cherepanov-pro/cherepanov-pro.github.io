@@ -1,0 +1,11 @@
+{
+  "vars": {},
+  "css": [
+    "component-animations.less",
+    "dropdowns.less"
+  ],
+  "js": [
+    "dropdown.js"
+  ],
+  "customizerUrl": "http://getbootstrap.com/customize/?id=23661a570451c7f8964d"
+}
