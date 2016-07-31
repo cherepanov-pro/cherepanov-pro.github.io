@@ -198,29 +198,3 @@ $(document).ready(function() {
 	$(".loader").delay(400).fadeOut("slow"); 
 });
 
-	//Яндекс карта
- 	ymaps.ready(init);
-
-	function init () {
-	    var myMap = new ymaps.Map("map", {
-	            center: [56.229812, 43.453868],
-	            zoom: 15,
-	            controls: []
-	        }, {
-	            searchControlProvider: 'yandex#search'
-	        });
-	    
-	// Создание метки с собственным значком.
-		var myPlacemark = new ymaps.Placemark([56.229812, 43.453868], {
-		}, {
-	        iconLayout: 'default#image',
-	        iconImageHref: 'img/pin.svg',
-	        iconImageSize: [40, 55],
-	        iconImageOffset: [-10, -80]
-	      });
-	    myMap.geoObjects.add(myPlacemark);
-	    myMap.behaviors.disable('scrollZoom');
-	    if ($(window).width() < 992) {
-	    	myMap.behaviors.disable('drag');
-	    }
-	}
